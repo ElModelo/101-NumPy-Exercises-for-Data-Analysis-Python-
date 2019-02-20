@@ -2,11 +2,14 @@
 # Q. Convert the function maxx that works on two scalars, to work on two arrays.
 import numpy as np
 def maxx(x, y):
-    """Get the maximum of two items"""
+    """Get the maximum of two arrays"""
     if x >= y:
         return x
     else:
         return y
 
-maxx(1, 5)
-#> 5
+a = np.array([5, 7, 9, 8, 6, 4, 5])
+b = np.array([6, 3, 4, 8, 9, 7, 1])
+
+vector_max = np.vectorize(maxx)
+print(vector_max(a,b))
